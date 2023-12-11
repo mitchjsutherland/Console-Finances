@@ -86,3 +86,40 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+let financesTest = [
+  ['Jan-2010', 1000, 5000],
+  ['Feb-2010', 2000, 5000],
+  ['Mar-2010', 3000, 5000],
+  ['Apr-2010', 4000, 5000],
+  ['May-2010', -5000, 5000],
+]
+
+
+// Header
+
+console.log('Financial Analysis');
+console.log('----------------------------');
+
+
+// Total Months
+
+console.log(`Total months: ${financesTest.length}`);
+
+
+// Total Amount
+
+let total = 0
+
+for (i=0; i<financesTest.length; i++) {
+  total = total + financesTest[i][1]
+}
+
+console.log(`Total: ${total}`)
+
+
+// Average Change
+
+// Greateast increase in profits/losses
+
+// Greatest decrease in profits/losses
