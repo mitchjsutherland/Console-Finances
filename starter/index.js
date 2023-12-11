@@ -87,13 +87,17 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// REMEMBER TO CHANGE ALL FUNCTIONS BELOW FROM TEST TO WORKING ARRAY
+
 let financesTest = [
   ['Jan-2010', 1000, 5000],
   ['Feb-2010', 2000, 5000],
-  ['Mar-2010', 3000, 5000],
-  ['Apr-2010', 4000, 5000],
-  ['May-2010', -5000, 5000],
+  ['Mar-2010', 5000, 5000],
+  ['Apr-2010', 40000, 5000],
+  ['May-2010', -10000, 5000],
 ]
+
+
 
 
 // Header
@@ -104,21 +108,34 @@ console.log('----------------------------');
 
 // Total Months
 
-console.log(`Total months: ${financesTest.length}`);
+console.log(`Total months: ${finances.length}`);
 
 
 // Total Amount
 
 let total = 0
 
-for (i=0; i<financesTest.length; i++) {
-  total = total + financesTest[i][1]
+for (i=0; i<finances.length; i++) {
+  total = total + finances[i][1]
 }
 
-console.log(`Total: ${total}`)
+console.log(`Total: $${total}`)
 
 
-// Average Change
+// Average Change - calculate the variation between each consecutive entry and divide by the number of entries
+
+let change = 0
+
+for (i=0; i<finances.length - 1; i++) {
+  change += finances[i + 1][1] - finances[i][1];
+}
+
+averageChange = change / (finances.length - 1);
+roundedChange = Math.round(averageChange * 100) / 100;
+
+console.log(change)
+console.log(`Average Change: $${roundedChange}`)
+console.log(`Average Change: $${Math.round(averageChange * 100) / 100}`)
 
 // Greateast increase in profits/losses
 
