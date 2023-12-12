@@ -154,7 +154,8 @@ for (i = 0; i < finances.length; i++) {
 console.log(`Greatest increase in profits/losses: ${highAmount}`)
 */
 
-let maxIncrease = 0
+let maxIncrease = 0;
+let maxMonth = " ";
 
 for (i=0; i<finances.length - 1; i++) {
 
@@ -162,16 +163,17 @@ for (i=0; i<finances.length - 1; i++) {
 
   if (increase > maxIncrease) {
     maxIncrease = increase;
+    maxMonth = finances[i+1][0];
   }
-
 }
 
-console.log(`Greatest increase in profits/losses: $${maxIncrease}`)
+console.log(`Greatest increase in profits/losses: ${maxMonth} ($${maxIncrease})`)
 
 
 // Greatest decrease in profits/losses - check the variation between each consectuive entry and log the lowest number
 
-let maxDecrease = 0
+let maxDecrease = 0;
+let lowMonth = " ";
 
 for (i=0; i<finances.length - 1; i++) {
 
@@ -179,9 +181,8 @@ for (i=0; i<finances.length - 1; i++) {
 
   if (decrease < maxDecrease) {
     maxDecrease = decrease;
+    lowMonth = finances[i+1][0];
   }
-
 }
 
-console.log(`Greatest decrease in profits/losses: $${maxDecrease}`)
-
+console.log(`Greatest decrease in profits/losses: ${lowMonth} ($${maxDecrease})`)
