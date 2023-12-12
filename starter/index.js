@@ -147,28 +147,41 @@ let highAmount = 0;
 for (i = 0; i < finances.length; i++) {
   
   if (finances[i][1] > highAmount) {
-    finances[i][1] = highAmount;
+    highAmount = finances[i][1];
   }
 }
 
 console.log(`Greatest increase in profits/losses: ${highAmount}`)
 */
 
+let maxIncrease = 0
 
+for (i=0; i<finances.length - 1; i++) {
 
+  increase = finances[i + 1][1] - finances[i][1];
 
+  if (increase > maxIncrease) {
+    maxIncrease = increase;
+  }
+
+}
+
+console.log(`Greatest increase in profits/losses: $${maxIncrease}`)
 
 
 // Greatest decrease in profits/losses - check the variation between each consectuive entry and log the lowest number
 
+let maxDecrease = 0
 
-let lowAmount = finances[0][1];
+for (i=0; i<finances.length - 1; i++) {
 
-for (i = 0; i < finances.length; i++) {
+  decrease = finances[i + 1][1] - finances[i][1];
 
-  if (finances[i][1] < lowAmount) {
-    finances[i][1] = lowAmount
+  if (decrease < maxDecrease) {
+    maxDecrease = decrease;
   }
+
 }
 
-console.log(`Greatest decrease in profits/losses: ${lowAmount}`)
+console.log(`Greatest decrease in profits/losses: $${maxDecrease}`)
+
