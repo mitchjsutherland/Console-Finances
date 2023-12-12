@@ -127,16 +127,48 @@ console.log(`Total: $${total}`)
 let change = 0
 
 for (i=0; i<finances.length - 1; i++) {
+  // change = change + finances[i + 1][1] - finances[i][1];
   change += finances[i + 1][1] - finances[i][1];
 }
 
 averageChange = change / (finances.length - 1);
 roundedChange = Math.round(averageChange * 100) / 100;
 
-console.log(change)
-console.log(`Average Change: $${roundedChange}`)
+// console.log(change)
+// console.log(`Average Change: $${roundedChange}`)
 console.log(`Average Change: $${Math.round(averageChange * 100) / 100}`)
 
-// Greateast increase in profits/losses
 
-// Greatest decrease in profits/losses
+// Greateast increase in profits/losses - check the variation between each consectuive entry and log the highest number
+
+/*
+let highAmount = 0;
+
+for (i = 0; i < finances.length; i++) {
+  
+  if (finances[i][1] > highAmount) {
+    finances[i][1] = highAmount;
+  }
+}
+
+console.log(`Greatest increase in profits/losses: ${highAmount}`)
+*/
+
+
+
+
+
+
+// Greatest decrease in profits/losses - check the variation between each consectuive entry and log the lowest number
+
+
+let lowAmount = finances[0][1];
+
+for (i = 0; i < finances.length; i++) {
+
+  if (finances[i][1] < lowAmount) {
+    finances[i][1] = lowAmount
+  }
+}
+
+console.log(`Greatest decrease in profits/losses: ${lowAmount}`)
